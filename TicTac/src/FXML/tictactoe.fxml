@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TicTacToe.TicTacToeController">
+<top>
+    <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+            <Menu text="Actions">
+                <items>
+                    <MenuItem fx:id="AIFirstButton" text="AIFirst" onAction="#firstAIAction"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <items>
+                    <MenuItem text="About" />
+                    <MenuItem text="How to play" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+</top>
+   <right>
+      <FlowPane prefHeight="300.0" prefWidth="225.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="90.0" prefWidth="225.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Strategia">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin></Label>
+                  <ComboBox fx:id="strategyComboBox" prefWidth="150.0" GridPane.columnIndex="1" onAction="#handleSwitchClassAction">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin></ComboBox>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Poziom trudności" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin></Label>
+                  <ComboBox fx:id="difficultyComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#handleSwitchMethodAction">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin></ComboBox>
+                  <Label text="Rozmiar" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox fx:id="sizeComboBox" onAction="#handleSizeComboAction" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <Button fx:id="loadClass" mnemonicParsing="false" onAction="#handleLoadClassAction" text="Zaladuj strategie" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                   <Button fx:id="unloadClass" mnemonicParsing="false" onAction="#handleUnloadClassAction" text="Wyładuj strategie" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin></Button>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints maxWidth="113.0" minWidth="89.0" prefWidth="105.0" />
+                  <ColumnConstraints maxWidth="136.0" minWidth="112.0" prefWidth="120.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </FlowPane>
+   </right>
+   <center>
+      <GridPane fx:id="gameBoard" alignment="CENTER" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

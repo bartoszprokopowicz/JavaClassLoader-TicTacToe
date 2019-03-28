@@ -1,3 +1,4 @@
+# TicTacToe
 Program utworzony na zajęcia Programowanie w języku JAVA
 </br>
 W tym zadaniu należało utworzyć program ładujący klasę z strategiami 
